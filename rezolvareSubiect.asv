@@ -29,6 +29,14 @@ for idx = 1:length(filenames)
     end
 end
 
+iii = IMAGINI(1).img;
+dim =  size(iii);
+astgdim(1);
+canalR = iii(:,:,1);
+canalG = iii(:,:,2);
+canalB = iii(:,:,3);
+x = 1;
+
 filenames = dir([directorData 'stop_sign/*.jpg']);
 for idx = 1:length(filenames)
     idxIMG = idxIMG + 1;
@@ -76,8 +84,9 @@ for i = 1:length(IMAGINI)
     end
 end
 
-e_corecte = length(A
 
+procentaj_corecte = [int2str((length(IMAGINI) - etichete_gresite) * 100 / length(IMAGINI)) '%']
+procentaj_gresite = (etichete_gresite) * 100 / length(IMAGINI)
 
 x = 1;
 

@@ -2,6 +2,7 @@
 %
 IMAGINI = struct('img',[],'eticheta',[]);
 IMAGINI_ORIGINAL = struct('eticheta',[], 'final', []);
+
 directorData = '../data/';
 etichete_gresite = 0;
 % 
@@ -28,6 +29,16 @@ for idx = 1:length(filenames)
         close gcf;
     end
 end
+
+iii = IMAGINI(1).img;
+% dim =  size(iii);
+% nr_pix = size(iii, 1) * size(iii,2);
+[height, width, c] = size(iii);
+nr_pix = height * width;
+canalR = iii(:,:,1);
+canalG = iii(:,:,2);
+canalB = iii(:,:,3);
+x = 1;
 
 filenames = dir([directorData 'stop_sign/*.jpg']);
 for idx = 1:length(filenames)
